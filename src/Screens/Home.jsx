@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Icon from "../Components/Icon";
 import FollowingFeed from "./SubScreen/FollowingFeed";
 import ForYouFeed from "./SubScreen/ForYouFeed";
@@ -31,7 +31,9 @@ export default function Home() {
 
 export function HomeAppbar() {
   return (
-    <header className="py-2 px-4 flex justify-between items-center">
+    <header
+      className={`z-50 py-2 px-4 flex justify-between items-center bg-black/10 backdrop-blur-xs`}
+    >
       <div className="w-10 h-10 flex justify-center items-center rounded-full bg-primary-700 text-lg">
         S
       </div>
@@ -42,18 +44,17 @@ export function HomeAppbar() {
 }
 
 export function FeedSelecter({ feed, setFeed, newFeed, setNewFeed }) {
-  function changeToForYou() {
-    setFeed(1);
-    setNewFeed(newFeed + 1);
-  }
-  function changeToFollowing() {
-    setFeed(2);
-    setNewFeed(newFeed - 1);
+  function toggleFeed() {
+    if (feed == 1) {
+      setFeed(2);
+    } else {
+      setFeed(1);
+    }
   }
   return (
     <div className="flex justify-evenly border-b border-b-neutral-700">
       <button
-        onClick={changeToForYou}
+        onClick={toggleFeed}
         className={`p-3 w-fit h-16 ${
           feed == 1
             ? "font-bold border-b-4 border-b-primary-500"
@@ -63,7 +64,7 @@ export function FeedSelecter({ feed, setFeed, newFeed, setNewFeed }) {
         For you
       </button>
       <button
-        onClick={changeToFollowing}
+        onClick={toggleFeed}
         className={`p-3 w-fit h-16 ${
           feed == 2
             ? "font-bold border-b-4 border-b-primary-500"

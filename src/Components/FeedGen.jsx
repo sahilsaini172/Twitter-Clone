@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Icon from "./Icon";
 
-export default function FeedItem() {
+export default function FeedItem(props) {
   const [forYouData, setForYouData] = useState([]);
 
   useEffect(() => {
@@ -12,8 +12,7 @@ export default function FeedItem() {
           name: meme.name,
           url: meme.url,
         }));
-        setForYouData(feedData);
-        console.log(forYouData); //State Update
+        setForYouData(feedData); //State Update
       });
   }, []);
 
@@ -38,7 +37,7 @@ export default function FeedItem() {
                   <Icon
                     icon="certificate"
                     type="solid"
-                    style="text-primary-500 "
+                    style={`text-primary-500`}
                   />
                   <p className="text-sm font-light truncate w-[141px]">
                     {item.name.replace(/\s+/g, "")}

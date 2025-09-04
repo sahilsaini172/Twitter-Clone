@@ -5,6 +5,7 @@ import Grok from "./Screens/Grok";
 import Message from "./Screens/Message";
 import Notification from "./Screens/Notification";
 import Community from "./Screens/Community";
+import NavigationBar from "./Components/NavigationBar";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/message" element={<Message />} />
           <Route path="/community" element={<Community />} />
         </Routes>
+        <NavigationBar/>
       </BrowserRouter>
     </main>
   );
