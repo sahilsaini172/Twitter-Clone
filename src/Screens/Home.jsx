@@ -2,8 +2,9 @@ import { useEffect, useState } from "react";
 import Icon from "../Components/Icon";
 import FollowingFeed from "./SubScreen/FollowingFeed";
 import ForYouFeed from "./SubScreen/ForYouFeed";
+import Sidebar from "../Components/Sidebar";
 
-export default function Home() {
+export default function Home({ isOpen, onClick }) {
   const [feed, setFeed] = useState(1);
   const [newFeed, setNewFeed] = useState(0);
 
@@ -17,7 +18,8 @@ export default function Home() {
 
   return (
     <main className="flex flex-col text-white **:duration-200 ease-linear">
-      <HomeAppbar />
+      <HomeAppbar handleSidebar={onClick} isOpen={isOpen} />
+      <Sidebar isOpen={isOpen} onClick={onClick} />
       <FeedSelecter
         feed={feed}
         setFeed={setFeed}
@@ -29,12 +31,15 @@ export default function Home() {
   );
 }
 
-export function HomeAppbar() {
+export function HomeAppbar({ isOpen, handleSidebar }) {
   return (
     <header
       className={`z-50 py-2 px-4 flex justify-between items-center bg-black/10 backdrop-blur-xs`}
     >
-      <div className="w-10 h-10 flex justify-center items-center rounded-full bg-primary-700 text-lg">
+      <div
+        onClick={handleSidebar}
+        className="w-10 h-10 flex justify-center items-center rounded-full bg-primary-700 text-lg"
+      >
         S
       </div>
       <Icon icon="x-twitter" type="brands" style="text-3xl" />
