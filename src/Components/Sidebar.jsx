@@ -4,7 +4,7 @@ export default function Sidebar({ isOpen, onClick }) {
   return (
     <div
       className={`fixed inset-0  duration-300 ease-linear ${
-        isOpen ? "z-10" : "bg-white/10 backdrop-blur-sm z-50"
+        isOpen ? "-z-10" : "bg-white/10 backdrop-blur-sm z-50"
       }`}
     >
       <div className={`flex h-full ${isOpen ? "-translate-x-full" : ""}`}>

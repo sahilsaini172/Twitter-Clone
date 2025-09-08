@@ -1,65 +1,41 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Icon from "../Components/Icon";
 import FollowingFeed from "./SubScreen/FollowingFeed";
 import ForYouFeed from "./SubScreen/ForYouFeed";
 import Sidebar from "../Components/Sidebar";
+import SidebarBtn from "../Components/SidebarBtn";
 
 export default function Home({ isOpen, onClick }) {
-  const [feed, setFeed] = useState(1);
-  const [newFeed, setNewFeed] = useState(0);
-
-  function changeFeed() {
-    if (feed == 1) {
-      return <ForYouFeed feed={feed} />;
-    } else if (feed == 2) {
-      return <FollowingFeed feed={feed} />;
-    }
-  }
+  const [feed, setFeed] = useState();
 
   return (
     <main className="flex flex-col text-white **:duration-200 ease-linear">
-      <HomeAppbar handleSidebar={onClick} isOpen={isOpen} />
+      <HomeAppbar onClick={onClick} isOpen={isOpen} />
       <Sidebar isOpen={isOpen} onClick={onClick} />
-      <FeedSelecter
-        feed={feed}
-        setFeed={setFeed}
-        newFeed={newFeed}
-        setNewFeed={setNewFeed}
-      />
-      {changeFeed()}
+      <FeedSelecter feed={feed} setFeed={setFeed} />
+      {feed === 1 && <ForYouFeed feed={feed} />}
+      {feed === 2 && <FollowingFeed feed={feed} />}
     </main>
   );
 }
 
-export function HomeAppbar({ isOpen, handleSidebar }) {
+export function HomeAppbar({ onClick }) {
   return (
     <header
-      className={`z-50 py-2 px-4 flex justify-between items-center bg-black/10 backdrop-blur-xs`}
+      className={`z-40 py-2 px-4 flex justify-between items-center bg-black/10 backdrop-blur-xs`}
     >
-      <div
-        onClick={handleSidebar}
-        className="w-10 h-10 flex justify-center items-center rounded-full bg-primary-700 text-lg"
-      >
-        S
-      </div>
+      <SidebarBtn onClick={onClick} />
       <Icon icon="x-twitter" type="brands" style="text-3xl" />
       <div className="w-10 h-10 flex justify-center items-center"></div>
     </header>
   );
 }
 
-export function FeedSelecter({ feed, setFeed, newFeed, setNewFeed }) {
-  function toggleFeed() {
-    if (feed == 1) {
-      setFeed(2);
-    } else {
-      setFeed(1);
-    }
-  }
+export function FeedSelecter({ feed, setFeed }) {
   return (
     <div className="flex justify-evenly border-b border-b-neutral-700">
       <button
-        onClick={toggleFeed}
+        onClick={() => setFeed(1)}
         className={`p-3 w-fit h-16 ${
           feed == 1
             ? "font-bold border-b-4 border-b-primary-500"
@@ -69,7 +45,7 @@ export function FeedSelecter({ feed, setFeed, newFeed, setNewFeed }) {
         For you
       </button>
       <button
-        onClick={toggleFeed}
+        onClick={() => setFeed(2)}
         className={`p-3 w-fit h-16 ${
           feed == 2
             ? "font-bold border-b-4 border-b-primary-500"

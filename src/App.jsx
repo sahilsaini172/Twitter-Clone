@@ -23,7 +23,10 @@ function App() {
             path="/"
             element={<Home isOpen={isOpen} onClick={handleSidebarToggle} />}
           />
-          <Route path="/search" element={<Search />} />
+          <Route
+            path="/search"
+            element={<Search isOpen={isOpen} onClick={handleSidebarToggle} />}
+          />
           <Route path="/grok" element={<Grok />} />
           <Route path="/notification" element={<Notification />} />
           <Route path="/message" element={<Message />} />
