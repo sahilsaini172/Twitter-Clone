@@ -11,3 +11,8 @@
   --color-primary-800: #0c4061;
   --color-primary-900: #062030;
 }
+
+
+.hide-scrollbar::-webkit-scrollbar{
+  display: none;
+}

@@ -38,7 +38,12 @@ function App() {
             path="/message"
             element={<Message isOpen={isOpen} onClick={handleSidebarToggle} />}
           />
-          <Route path="/community" element={<Community />} />
+          <Route
+            path="/community"
+            element={
+              <Community isOpen={isOpen} onClick={handleSidebarToggle} />
+            }
+          />
         </Routes>
         <NavigationBar />
       </BrowserRouter>
