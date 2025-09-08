@@ -6,10 +6,10 @@ import Sidebar from "../Components/Sidebar";
 import SidebarBtn from "../Components/SidebarBtn";
 
 export default function Home({ isOpen, onClick }) {
-  const [feed, setFeed] = useState();
+  const [feed, setFeed] = useState(1);
 
   return (
-    <main className="flex flex-col text-white **:duration-200 ease-linear">
+    <main className="flex flex-col text-white **:duration-200 ease-linear mb-16">
       <HomeAppbar onClick={onClick} isOpen={isOpen} />
       <Sidebar isOpen={isOpen} onClick={onClick} />
       <FeedSelecter feed={feed} setFeed={setFeed} />

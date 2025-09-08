@@ -36,7 +36,7 @@ export default function Search({ isOpen, onClick }) {
   }
 
   return (
-    <main className="flex flex-col text-white **:duration-200 ease-linear">
+    <main className="flex flex-col text-white **:duration-200 **:ease-linear">
       <SearchAppbar onClick={onClick} />
       <Sidebar onClick={onClick} isOpen={isOpen} />
       <SearchFeedSelector selected={searchFeed} setSelected={setSearchFeed} />
