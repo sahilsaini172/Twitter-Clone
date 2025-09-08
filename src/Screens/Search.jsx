@@ -7,6 +7,7 @@ import SearchTrendingFeed from "./SubScreen/SearchTrendingFeed";
 import SearchNewsFeed from "./SubScreen/SearchNewsFeed";
 import SearchSportsFeed from "./SubScreen/SearchSportsFeed";
 import SearchEntertainmentFeed from "./SubScreen/SearchEntertainmentFeed";
+import FAB from '../Components/FAB'
 
 export default function Search({ isOpen, onClick }) {
   const [searchFeed, setSearchFeed] = useState(1);
@@ -41,6 +42,7 @@ export default function Search({ isOpen, onClick }) {
       <Sidebar onClick={onClick} isOpen={isOpen} />
       <SearchFeedSelector selected={searchFeed} setSelected={setSearchFeed} />
       {changeSearchFeed()}
+      <FAB/>
     </main>
   );
 }

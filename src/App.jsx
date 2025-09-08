@@ -16,7 +16,7 @@ function App() {
   }
 
   return (
-    <main className="bg-black text-white min-h-screen">
+    <main className="bg-black text-white **:duration-200 **:ease-linear scroll-smooth">
       <BrowserRouter>
         <Routes>
           <Route
@@ -28,8 +28,16 @@ function App() {
             element={<Search isOpen={isOpen} onClick={handleSidebarToggle} />}
           />
           <Route path="/grok" element={<Grok />} />
-          <Route path="/notification" element={<Notification />} />
-          <Route path="/message" element={<Message />} />
+          <Route
+            path="/notification"
+            element={
+              <Notification isOpen={isOpen} onClick={handleSidebarToggle} />
+            }
+          />
+          <Route
+            path="/message"
+            element={<Message isOpen={isOpen} onClick={handleSidebarToggle} />}
+          />
           <Route path="/community" element={<Community />} />
         </Routes>
         <NavigationBar />
