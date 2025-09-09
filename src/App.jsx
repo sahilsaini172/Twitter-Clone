@@ -16,7 +16,7 @@ function App() {
   }
 
   return (
-    <main className="bg-black text-white **:duration-200 **:ease-linear scroll-smooth">
+    <main className="bg-black sm:ml-17 text-white **:duration-200 **:ease-linear scroll-smooth">
       <BrowserRouter>
         <Routes>
           <Route

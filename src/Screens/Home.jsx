@@ -23,7 +23,7 @@ export default function Home({ isOpen, onClick }) {
 export function HomeAppbar({ onClick }) {
   return (
     <header
-      className={`z-40 py-2 px-4 flex justify-between items-center bg-black/10 backdrop-blur-xs`}
+      className={`z-40 py-2 px-4 flex justify-between items-center bg-black/10 backdrop-blur-xs sm:hidden`}
     >
       <SidebarBtn onClick={onClick} />
       <Icon icon="x-twitter" type="brands" style="text-3xl" />
@@ -61,7 +61,7 @@ export function FeedSelecter({ feed, setFeed }) {
 
 function NewPost() {
   return (
-    <section className="p-4 text-primary-500 border-b border-b-neutral-700 flex justify-between items-center">
+    <section className="p-4 text-primary-500 border-b border-b-neutral-700 flex justify-between items-center sm:hidden">
       <div className="flex items-center gap-4">
         <Icon icon="image" />
         <Icon icon="video" />
