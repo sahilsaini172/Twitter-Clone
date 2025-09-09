@@ -5,7 +5,7 @@ import FAB from "../Components/FAB";
 
 export default function Message({ isOpen, onClick }) {
   return (
-    <main className="flex flex-col text-white **:duration-200 ease-linear mb-16">
+    <main className="md:w-[640px] flex flex-col text-white **:duration-200 ease-linear mb-16">
       <MessageAppbar onClick={onClick} />
       <Sidebar onClick={onClick} isOpen={isOpen} />
       <div className="flex items-center justify-between gap-4 px-8 py-4">

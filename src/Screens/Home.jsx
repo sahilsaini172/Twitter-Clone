@@ -10,7 +10,7 @@ export default function Home({ isOpen, onClick, screenWidth }) {
   const [feed, setFeed] = useState(1);
 
   return (
-    <main className="flex flex-col text-white **:duration-200 ease-linear mb-16">
+    <main className="md:w-[640px] flex flex-col text-white **:duration-200 ease-linear mb-16">
       <HomeAppbar onClick={onClick} isOpen={isOpen} />
       <Sidebar isOpen={isOpen} onClick={onClick} />
       <FeedSelecter feed={feed} setFeed={setFeed} />

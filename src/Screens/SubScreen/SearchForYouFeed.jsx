@@ -4,8 +4,8 @@ import News from "../../Components/News";
 
 export default function SearchForYouFeed() {
   return (
-    <main className="flex flex-col gap-4 mb-16">
-      <Header />
+    <main className=" flex flex-col lg:gap-0 gap-4 mb-16">
+      <SearchForYouFeedHeader />
       <TodayNewsSection />
       <TrendingTopicsSec />
       <WhoToFollow />
@@ -14,9 +14,9 @@ export default function SearchForYouFeed() {
   );
 }
 
-function Header() {
+export function SearchForYouFeedHeader() {
   return (
-    <header className="relative w-full grid items-end border border-black">
+    <header className="  relative lg:w-fit lg:overflow-hidden w-full grid items-end border border-black">
       <video
         src="../vid1.mp4"
         typeof="video/mp4"
@@ -37,9 +37,9 @@ function Header() {
   );
 }
 
-function TodayNewsSection() {
+export function TodayNewsSection() {
   return (
-    <section className="flex flex-col p-4">
+    <section className="  flex flex-col p-4">
       <header className="text-xl font-bold">Today's News</header>
       <News />
       <News />
@@ -50,7 +50,7 @@ function TodayNewsSection() {
 
 function TrendingTopicsSec() {
   return (
-    <section className="flex flex-col p-4 border-y border-y-neutral-500 text-sm text-neutral-500 gap-6">
+    <section className="  flex flex-col p-4 border-y border-y-neutral-500 text-sm text-neutral-500 gap-6">
       <TrendingTopic />
       <TrendingTopic />
       <TrendingTopic />
@@ -61,7 +61,7 @@ function TrendingTopicsSec() {
 
 function WhoToFollow() {
   return (
-    <section className="flex flex-col p-4 gap-6">
+    <section className="  flex flex-col p-4 gap-6">
       <header className="text-xl font-bold">Who to follow</header>
       <FollowProfile />
       <FollowProfile />
@@ -72,7 +72,7 @@ function WhoToFollow() {
 
 function FollowProfile() {
   return (
-    <main className="flex gap-2 ">
+    <main className=" flex gap-2 ">
       <img
         src="../img/img1.png"
         className="object-cover w-12 h-12 aspect-square rounded-full"
@@ -98,7 +98,7 @@ function FollowProfile() {
 
 function BusinessNews() {
   return (
-    <section className="flex flex-col p-4 border-t border-t-neutral-500 gap-6">
+    <section className="lg:hidden flex flex-col p-4 border-t border-t-neutral-500 gap-6">
       <header className="flex items-center justify-between">
         <h2 className="text-xl font-bold">Business News</h2>
         <div className="flex items-center gap-4">
@@ -115,7 +115,7 @@ function BusinessNews() {
 
 function BusinessNewsItem() {
   return (
-    <main className="flex gap-2 border-b border-b-neutral-500">
+    <main className=" flex gap-2 border-b border-b-neutral-500">
       <img
         src="../img/img1.png"
         className="object-cover w-12 h-12 aspect-square rounded-full"

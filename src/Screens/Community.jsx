@@ -6,7 +6,7 @@ import { Link } from "react-router";
 
 export default function Community({ isOpen, onClick }) {
   return (
-    <main className="flex flex-col text-white **:duration-200 ease-linear mb-16">
+    <main className="md:w-[640px] flex flex-col text-white **:duration-200 ease-linear mb-16">
       <CommunityAppbar onClick={onClick} />
       <Sidebar isOpen={isOpen} onClick={onClick} />
       <Pins />

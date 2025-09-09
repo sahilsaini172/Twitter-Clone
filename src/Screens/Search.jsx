@@ -15,7 +15,7 @@ export default function Search({ isOpen, onClick, screeWidth }) {
   function changeSearchFeed() {
     switch (searchFeed) {
       case 1:
-        return <SearchForYouFeed />;
+        return <SearchForYouFeed screenWidth={screeWidth} />;
         break;
       case 2:
         return <SearchTrendingFeed />;
@@ -37,7 +37,7 @@ export default function Search({ isOpen, onClick, screeWidth }) {
   }
 
   return (
-    <main className="flex flex-col text-white **:duration-200 ease-linear mb-16">
+    <main className="md:w-[640px] flex flex-col text-white **:duration-200 ease-linear mb-16">
       <SearchAppbar onClick={onClick} />
       <Sidebar onClick={onClick} isOpen={isOpen} />
       <SearchFeedSelector selected={searchFeed} setSelected={setSearchFeed} />
@@ -50,7 +50,7 @@ export default function Search({ isOpen, onClick, screeWidth }) {
 export function SearchAppbar({ onClick, screeWidth }) {
   return (
     <header
-      className={`z-40 py-2 px-4 flex gap-4 justify-between items-center bg-black/10 backdrop-blur-xs`}
+      className={` z-40 py-2 px-4 flex gap-4 justify-between items-center bg-black/10 backdrop-blur-xs`}
     >
       <SidebarBtn onClick={onClick} screeWidth={screeWidth}/>
       <div className="flex border border-neutral-600 px-2 py-3 rounded-full items-center gap-2 flex-1">

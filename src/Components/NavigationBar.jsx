@@ -4,10 +4,14 @@ import { Link } from "react-router";
 import { useEffect } from "react";
 
 export default function NavigationBar({ screenWidth }) {
-  const newStyle =
+  let newStyle =
     screenWidth < 500
       ? "fixed bottom-0 z-40 bg-black border-t border-t-neutral-700 p-4 w-full flex justify-between items-center text-xl"
       : "fixed left-0 overflow-y-scroll top-0 bottom-0 flex flex-col items-center bg-black border-r border-r-neutral-700 text-2xl gap-8 py-4 px-2";
+  if (screenWidth > 767) {
+    newStyle =
+      "overflow-y-scroll flex flex-col items-center bg-black text-2xl gap-8 py-4 px-2 border-x border-x-neutral-700";
+  }
 
   return (
     <footer className={newStyle}>

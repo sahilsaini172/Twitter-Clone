@@ -95,7 +95,7 @@ function NotificationAllFeed() {
           <p className="text-neutral-500">Grok</p>
         </div>
       </div>
-      <div className="flex gap-4 border-b border-b-neutral-500 p-4">
+      <div className="md:w-[640px] flex gap-4 border-b border-b-neutral-500 p-4">
         <Icon type="brands" icon="x-twitter" style="text-2xl" />
         <p>
           There was a login to your account @johnDoe121 from a new device on sep
