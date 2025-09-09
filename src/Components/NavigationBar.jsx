@@ -22,18 +22,18 @@ export default function NavigationBar({ screenWidth }) {
       {screenWidth > 499 && (
         <Icon style="text-4xl xl:w-full" type="brands" icon="x-twitter" />
       )}
-      <NavigationBarItem icon="house" title="Home" />
-      <NavigationBarItem title="Search" icon="magnifying-glass" />
-      <NavigationBarItem title="Grok" icon="react" type="brands" />
-      <NavigationBarItem title="Notification" icon="bell" />
-      <NavigationBarItem title="Message" icon="envelope" />
-      <NavigationBarItem title="Community" icon="user-group" />
+      <NavigationBarItem screenWidth={screenWidth} icon="house" title="Home" />
+      <NavigationBarItem screenWidth={screenWidth} title="Search" icon="magnifying-glass" />
+      <NavigationBarItem screenWidth={screenWidth} title="Grok" icon="react" type="brands" />
+      <NavigationBarItem screenWidth={screenWidth} title="Notification" icon="bell" />
+      <NavigationBarItem screenWidth={screenWidth} title="Message" icon="envelope" />
+      <NavigationBarItem screenWidth={screenWidth} title="Community" icon="user-group" />
       {screenWidth > 499 && (
         <>
-          <NavigationBarItem title="Jobs" icon="briefcase" />
-          <NavigationBarItem title="Premium" icon="x-twitter" type="brands" />
-          <NavigationBarItem title="Verified Orgs" icon="bolt" />
-          <NavigationBarItem title="Profile" icon="user" />
+          <NavigationBarItem screenWidth={screenWidth} title="Jobs" icon="briefcase" />
+          <NavigationBarItem screenWidth={screenWidth} title="Premium" icon="x-twitter" type="brands" />
+          <NavigationBarItem screenWidth={screenWidth} title="Verified Orgs" icon="bolt" />
+          <NavigationBarItem screenWidth={screenWidth} title="Profile" icon="user" />
           <div className="flex gap-2 items-center xl:pr-12 xl:w-full">
             <Icon icon="ellipsis" style="" />
             <h2 className="sm:max-xl:hidden ">More</h2>
@@ -51,6 +51,7 @@ export function NavigationBarItem({
   title = "",
   type = "solid",
   icon = "add",
+  screenWidth = 200,
 }) {
   const newTitle =
     title == "Home" ? "" : title.charAt(0).toLowerCase() + title.slice(1);
@@ -58,7 +59,9 @@ export function NavigationBarItem({
     <button className="xl:w-full xl:pr-12 hover:text-primary-100 px-2 flex items-center ">
       <Link to={"/" + newTitle} className="flex items-center gap-2">
         <Icon icon={icon} type={type} style="z-10" />
-        <h2 className="sm:max-xl:hidden xl:text-nowrap">{title}</h2>
+        {screenWidth > 1279 && (
+          <h2 className="text-nowrap">{title}</h2>
+        )}
       </Link>
     </button>
   );
