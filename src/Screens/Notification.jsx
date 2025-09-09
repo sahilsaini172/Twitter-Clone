@@ -109,10 +109,10 @@ function NotificationAllFeed() {
 
 function NotificationVerifiedFeed() {
   return (
-    <section className="flex flex-col p-8 items-center">
-      <img src="../img/verified.png" className="w-1/2" />
+    <section className="flex flex-col items-center">
+      <img src="../img/verified.png" className="max-w-[200px] m-8" />
       <h2 className="text-4xl font-bold ">Nothing to see here &#x2015; yet</h2>
-      <p className="text-neutral-500">
+      <p className="text-neutral-500 w-1/2">
         Likes, mentions, reposts, and a whole lot more &#x2015; when it comes
         from a verified account, you'll find it here.{" "}
         <span className="font-bold inline-block underline text-white">

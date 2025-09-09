@@ -34,7 +34,7 @@ export default function NavigationBar({ screenWidth }) {
           <NavigationBarItem title="Premium" icon="x-twitter" type="brands" />
           <NavigationBarItem title="Verified Orgs" icon="bolt" />
           <NavigationBarItem title="Profile" icon="user" />
-          <div className="flex items-center xl:pr-12 xl:w-full">
+          <div className="flex gap-2 items-center xl:pr-12 xl:w-full">
             <Icon icon="ellipsis" style="" />
             <h2 className="sm:max-xl:hidden ">More</h2>
           </div>
