@@ -3,7 +3,7 @@ import Icon from "./Icon";
 export default function Sidebar({ isOpen, onClick }) {
   return (
     <div
-      className={`fixed inset-0  duration-300 ease-linear ${
+      className={`fixed inset-0  duration-300 ease-linear max-w-[430px] ${
         isOpen ? "-z-50" : "bg-white/10 backdrop-blur-sm z-50"
       }`}
     >

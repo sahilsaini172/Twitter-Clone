@@ -3,7 +3,7 @@ import { Link } from "react-router";
 
 export default function NavigationBar() {
   return (
-    <footer className="fixed bottom-0 z-40 bg-black border-t border-t-neutral-700 p-4 w-full flex justify-between items-center text-xl">
+    <footer className="fixed max-w-[430px] bottom-0 z-40 bg-black border-t border-t-neutral-700 p-4 w-full flex justify-between items-center text-xl">
       <NavigationBarItem icon="house" />
       <NavigationBarItem title="search" icon="magnifying-glass" />
       <NavigationBarItem title="grok" icon="react" type="brands" />
