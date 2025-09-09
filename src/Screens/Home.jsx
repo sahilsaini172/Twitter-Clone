@@ -4,8 +4,9 @@ import FollowingFeed from "./SubScreen/FollowingFeed";
 import ForYouFeed from "./SubScreen/ForYouFeed";
 import Sidebar from "../Components/Sidebar";
 import SidebarBtn from "../Components/SidebarBtn";
+import NewPost from "../Components/NewPost";
 
-export default function Home({ isOpen, onClick }) {
+export default function Home({ isOpen, onClick, screenWidth }) {
   const [feed, setFeed] = useState(1);
 
   return (
@@ -13,7 +14,7 @@ export default function Home({ isOpen, onClick }) {
       <HomeAppbar onClick={onClick} isOpen={isOpen} />
       <Sidebar isOpen={isOpen} onClick={onClick} />
       <FeedSelecter feed={feed} setFeed={setFeed} />
-      <NewPost />
+      <NewPost screenWidth={screenWidth} />
       {feed === 1 && <ForYouFeed feed={feed} />}
       {feed === 2 && <FollowingFeed feed={feed} />}
     </main>
@@ -56,22 +57,5 @@ export function FeedSelecter({ feed, setFeed }) {
         Following
       </button>
     </div>
-  );
-}
-
-function NewPost() {
-  return (
-    <section className="p-4 text-primary-500 border-b border-b-neutral-700 flex justify-between items-center sm:hidden">
-      <div className="flex items-center gap-4">
-        <Icon icon="image" />
-        <Icon icon="video" />
-        <Icon type="brands" icon="react" />
-        <Icon icon="icons" />
-        <Icon icon="location-pin" />
-      </div>
-      <button className="text-sm font-bold text-black bg-neutral-500 py-2 px-4 rounded-full">
-        Post
-      </button>
-    </section>
   );
 }

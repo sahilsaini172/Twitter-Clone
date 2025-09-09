@@ -3,11 +3,15 @@ import Icon from "./Icon";
 export default function Sidebar({ isOpen, onClick }) {
   return (
     <div
-      className={`fixed inset-0 duration-300 ease-linear max-w-[430px] ${
+      className={`fixed inset-0 duration-300 ease-linear hide-scrollbar  ${
         isOpen ? "-z-50" : "bg-white/10 backdrop-blur-sm z-50"
       }`}
     >
-      <div className={`flex h-full overflow-y-scroll ${isOpen ? "-translate-x-full" : ""}`}>
+      <div
+        className={`flex h-full overflow-y-scroll hide-scrollbar ${
+          isOpen ? "-translate-x-full" : ""
+        }`}
+      >
         <div className="w-2/3 bg-black">
           <SidebarHeader />
           <SidebarItem icon="comment" title="Chat" />

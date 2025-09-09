@@ -3,24 +3,11 @@ import Icon from "../Components/Icon";
 import { Link } from "react-router";
 import { useEffect } from "react";
 
-export default function NavigationBar() {
-  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
-
-  useEffect(() => {
-    const handleResize = () => setScreenWidth(window.innerWidth);
-
-    //update on resize
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
+export default function NavigationBar({ screenWidth }) {
   const newStyle =
     screenWidth < 500
       ? "fixed bottom-0 z-40 bg-black border-t border-t-neutral-700 p-4 w-full flex justify-between items-center text-xl"
-      : "fixed left-0 top-0 bottom-0 flex flex-col items-center bg-black border-r border-r-neutral-700 text-2xl gap-8 py-4 px-2";
+      : "fixed left-0 overflow-y-scroll top-0 bottom-0 flex flex-col items-center bg-black border-r border-r-neutral-700 text-2xl gap-8 py-4 px-2";
 
   return (
     <footer className={newStyle}>
@@ -39,8 +26,10 @@ export default function NavigationBar() {
           <NavigationBarItem title="" icon="x-twitter" type="brands" />
           <NavigationBarItem title="" icon="bolt" />
           <NavigationBarItem title="" icon="user" />
-          <NavigationBarItem title="" icon="ellipsis" />
-          <div className="flex items-center justify-center w-12 h-12 bg-white rounded-full">
+          <div className="flex flex-col justify-center">
+            <Icon icon="ellipsis" style="" />
+          </div>
+          <div className="flex items-center aspect-square justify-center w-12 h-12 bg-white rounded-full">
             <Icon style="text-black" />
           </div>
         </>

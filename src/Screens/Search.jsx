@@ -9,7 +9,7 @@ import SearchSportsFeed from "./SubScreen/SearchSportsFeed";
 import SearchEntertainmentFeed from "./SubScreen/SearchEntertainmentFeed";
 import FAB from "../Components/FAB";
 
-export default function Search({ isOpen, onClick }) {
+export default function Search({ isOpen, onClick, screeWidth }) {
   const [searchFeed, setSearchFeed] = useState(1);
 
   function changeSearchFeed() {
@@ -47,12 +47,12 @@ export default function Search({ isOpen, onClick }) {
   );
 }
 
-export function SearchAppbar({ onClick }) {
+export function SearchAppbar({ onClick, screeWidth }) {
   return (
     <header
       className={`z-40 py-2 px-4 flex gap-4 justify-between items-center bg-black/10 backdrop-blur-xs`}
     >
-      <SidebarBtn onClick={onClick} />
+      <SidebarBtn onClick={onClick} screeWidth={screeWidth}/>
       <div className="flex border border-neutral-600 px-2 py-3 rounded-full items-center gap-2 flex-1">
         <Icon icon="magnifying-glass" style="text-sm p-1 text-neutral-500" />
         <input
