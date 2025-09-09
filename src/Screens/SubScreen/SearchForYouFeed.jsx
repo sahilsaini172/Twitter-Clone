@@ -122,7 +122,7 @@ function BusinessNewsItem() {
       />
       <div className="flex flex-col w-full">
         <header className="flex flex-1 justify-between items-center">
-          <div className="flex justify-between gap-2">
+          <div className="flex justify-between gap-1 flex-wrap">
             <h3 className="font-medium">Iman Gadzhi</h3>
             <p className="font-light text-neutral-500">
               @GadzhiIman &#183; 23h

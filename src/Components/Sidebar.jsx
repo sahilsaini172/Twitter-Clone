@@ -3,12 +3,12 @@ import Icon from "./Icon";
 export default function Sidebar({ isOpen, onClick }) {
   return (
     <div
-      className={`fixed inset-0  duration-300 ease-linear max-w-[430px] ${
+      className={`fixed inset-0 duration-300 ease-linear max-w-[430px] ${
         isOpen ? "-z-50" : "bg-white/10 backdrop-blur-sm z-50"
       }`}
     >
-      <div className={`flex h-full ${isOpen ? "-translate-x-full" : ""}`}>
-        <div className="w-2/3 bg-black p-4">
+      <div className={`flex h-full overflow-y-scroll ${isOpen ? "-translate-x-full" : ""}`}>
+        <div className="w-2/3 bg-black">
           <SidebarHeader />
           <SidebarItem icon="comment" title="Chat" />
           <SidebarItem icon="user" title="Profile" />
@@ -31,7 +31,7 @@ export default function Sidebar({ isOpen, onClick }) {
 
 function SidebarHeader() {
   return (
-    <header className="flex  flex-col">
+    <header className="flex flex-col p-4">
       <div className="flex justify-between items-center">
         <div className="w-10 h-10 flex justify-center items-center rounded-full bg-primary-700 text-lg">
           S
@@ -56,7 +56,7 @@ function SidebarHeader() {
 
 function SidebarItem({ icon, title = "title", type = "solid" }) {
   return (
-    <div className="flex items-center text-xl gap-6 font-bold py-4">
+    <div className="flex items-center bg-black text-xl gap-6 font-bold p-4">
       <Icon type={type} icon={icon} />
       <h3>{title}</h3>
     </div>

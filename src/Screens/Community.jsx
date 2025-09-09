@@ -2,6 +2,7 @@ import SidebarBtn from "../Components/SidebarBtn";
 import Icon from "../Components/Icon";
 import Sidebar from "../Components/Sidebar";
 import { useState } from "react";
+import { Link } from "react-router";
 
 export default function Community({ isOpen, onClick }) {
   return (
@@ -23,8 +24,10 @@ function CommunityAppbar({ onClick }) {
     <header
       className={`z-40 py-2 px-4 flex justify-between items-center bg-black/10 backdrop-blur-xs border-b border-b-neutral-500`}
     >
-      <div className="flex items-center gap-4">
-        <SidebarBtn onClick={onClick} />
+      <div className="flex items-center gap-4 p-1">
+        <Link to="/">
+          <Icon icon="arrow-left" />
+        </Link>
         <h1 className="text-xl font-bold">Communities</h1>
       </div>
       <Icon icon="gear" />
@@ -89,7 +92,7 @@ function CommunityPost() {
         />
         <div className="flex flex-col flex-1">
           <div className="flex gap-1 items-center justify-between ">
-            <div className="flex items-center gap-1">
+            <div className="flex items-center gap-1 flex-wrap">
               <h2 className="font-bold">Anime Updates</h2>
               <p className="text-neutral-500">@animeupdates_</p>
               <p className="text-neutral-500"> &#183; 3h</p>
@@ -106,7 +109,7 @@ function CommunityPost() {
             <img
               src="../img/img4.jpeg"
               alt=""
-              className="my-2 rounded-2xl aspect-video object-cover border border-neutral-500"
+              className="my-2 rounded-2xl aspect-video object-cover border border-neutral-700"
             />
             <p className="line-clamp-2">
               <span className="text-sm text-neutral-500">From</span>

@@ -37,7 +37,7 @@ export default function Search({ isOpen, onClick }) {
   }
 
   return (
-    <main className="flex flex-col text-white **:duration-200 **:ease-linear">
+    <main className="flex flex-col text-white **:duration-200 ease-linear mb-16">
       <SearchAppbar onClick={onClick} />
       <Sidebar onClick={onClick} isOpen={isOpen} />
       <SearchFeedSelector selected={searchFeed} setSelected={setSearchFeed} />
@@ -50,7 +50,7 @@ export default function Search({ isOpen, onClick }) {
 export function SearchAppbar({ onClick }) {
   return (
     <header
-      className={`z-40 py-2 px-4 flex gap-8 justify-between items-center bg-black/10 backdrop-blur-xs`}
+      className={`z-40 py-2 px-4 flex gap-4 justify-between items-center bg-black/10 backdrop-blur-xs`}
     >
       <SidebarBtn onClick={onClick} />
       <div className="flex border border-neutral-600 px-2 py-3 rounded-full items-center gap-2 flex-1">
@@ -58,7 +58,7 @@ export function SearchAppbar({ onClick }) {
         <input
           type="search"
           placeholder="Search"
-          className="flex-1 placeholder:text-white text-sm"
+          className="flex-1 placeholder:text-white text-sm min-w-30"
         />
       </div>
       <Icon icon="gear" />
@@ -90,12 +90,12 @@ function SearchFeedSelector({ selected, setSelected }) {
     },
   ];
   return (
-    <div className="flex justify-evenly border-b border-b-neutral-700">
+    <div className="flex justify-evenly overflow-y-scroll hide-scrollbar border-b border-b-neutral-700">
       {feeds.map((feed) => {
         return (
           <button
             onClick={() => setSelected(feed.id)}
-            className={`p-3 w-fit h-16  ${
+            className={`text-nowrap p-3 w-fit h-16  ${
               selected == feed.id
                 ? "font-bold border-b-4 border-b-primary-500"
                 : "font-semibold text-neutral-500"

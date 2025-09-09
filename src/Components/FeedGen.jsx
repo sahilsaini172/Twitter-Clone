@@ -30,7 +30,7 @@ export default function FeedItem(props) {
             />
             <div className="flex flex-col flex-grow">
               <div className="flex gap-1 items-center justify-between">
-                <div className="flex items-center min-w-0">
+                <div className="flex items-center min-w-0 flex-wrap">
                   <h2 className="font-medium text-white truncate line-clamp-1 w-[141px]">
                     {item.name}
                   </h2>

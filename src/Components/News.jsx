@@ -1,6 +1,6 @@
 export default function News() {
   return (
-    <main className="flex gap-2 py-4">
+    <main className="flex gap-2 py-4 items-center">
       <div className="flex flex-col justify-between">
         <h3 className="text-lg font-bold leading-5 line-clamp-2">
           Here is a news for you from 2025. Hope you like it and read it.
@@ -25,7 +25,7 @@ export default function News() {
       </div>
       <img
         src="../img/img1.png"
-        className="object-top object-cover aspect-square rounded-2xl w-2/11"
+        className="object-top object-cover aspect-square rounded-2xl w-18 h-18"
       />
     </main>
   );
